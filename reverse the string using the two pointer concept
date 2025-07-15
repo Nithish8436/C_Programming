@@ -1,0 +1,19 @@
+//reverse the string using the two pointer concept
+
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+int main(){
+   char str[100]="rishi";
+   int size=strlen(str);
+   int i=0,j=size-1;
+   while(i<j){
+       int temp=str[i];
+       str[i]=str[j];
+       str[j]=temp;
+       i++;
+       j--;
+   }
+   printf("%s",str);
+   
+}
