@@ -1,0 +1,44 @@
+//remove duplicate from the array (duplicate value are return to -1 then what are the value are not -1 then print that values)
+//duplicated are turned into -1
+
+#include <stdio.h>
+
+int removeduplicate(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]==-1) continue;
+        
+        for(int j=i+1;j<size;j++)
+        {
+            if(arr[i]==arr[j])
+            {
+                arr[j]=-1;
+            }
+        }
+    }
+
+}
+
+int main()
+{
+    int n;
+    printf("enter the size:");
+    scanf("%d",&n);
+    int arr[100];
+    printf("enter the array value:");
+    for(int i=0;i<n;i++){
+        scanf("%d",&arr[i]);
+    }
+    
+    removeduplicate(arr,n);
+    
+    printf("array after removing duplicate:\n");
+    for(int i=0;i<n;i++){
+        if(arr[i]!=-1){
+            printf("%d ",arr[i]);
+        }
+    }
+    printf("\n");
+    return 0;
+}
