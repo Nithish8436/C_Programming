@@ -1,0 +1,32 @@
+//arrange a in the end of the array
+
+#include <stdio.h>
+#include <string.h>
+
+int main()
+{
+    char str[100]="abacbaa";
+    
+    int len=strlen(str);
+    
+    char result[100];
+    int k=0;
+    for(int i=0;i<len;i++){
+        if(str[i]!='a'){                    //bcb
+            result[k]=str[i];
+            k++;
+        }
+    }
+    
+    for(int i=0;i<len;i++){
+        if(str[i]=='a'){
+            result[k]='a';               //bcbaaaa
+            k++;
+        }
+    }
+     
+    
+    printf("%s",result);
+    
+    return 0;
+}
