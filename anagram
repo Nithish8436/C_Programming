@@ -1,0 +1,54 @@
+//anagram
+
+#include <stdio.h>
+#include<string.h>
+#include<ctype.h>
+
+#define size 100
+
+int findanagram(char str1[],char str2[])
+{
+    int count[26]={0};
+    
+    
+    if(strlen(str1)!=strlen(str2))
+    return 0;
+    
+    
+    for(int i=0;str1[i]!='\0';i++)
+    {
+        count[tolower(str1[i])-'a']++;
+    }
+    
+    for(int i=0;str2[i]!='\0';i++)
+    count[tolower(str2[i])-'a']--;
+    
+    
+    for(int i=0;i<26;i++)
+    {
+        if(count[i]!=0){
+            return 0;
+        }
+    }
+    return 1;
+}
+
+
+int main()
+{
+    char string1[size];
+    scanf("%s",string1);
+    char string2[size];
+    scanf("%s",string2);
+    
+    
+    if(findanagram(string1,string2))
+    printf("anagram");
+    
+    else
+    printf("not ");
+    
+
+
+    return 0;
+}
